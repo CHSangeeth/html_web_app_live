@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Forex Signals | Login</title>
+  <link rel="stylesheet" href="/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="login-page">
+  <div class="login-container">
+    <div class="login-header">
+      <h1 class="site-title">ForexSignals</h1>
+      <p class="site-slogan">Professional trading signals that deliver results</p>
+    </div>
+    
+    <div class="tabs">
+      <div class="tab-header">
+        <div class="tab active" data-tab="login">Login</div>
+        <div class="tab" data-tab="register">Register</div>
+      </div>
+      
+      <div class="tab-content">
+        <div class="tab-pane active" id="login-tab">
+          <form id="loginForm" class="auth-form">
+            <div class="form-group">
+              <label for="loginUsername"><i class="fas fa-user"></i> Username</label>
+              <input type="text" id="loginUsername" name="username" placeholder="Enter your username" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="loginPassword"><i class="fas fa-lock"></i> Password</label>
+              <input type="password" id="loginPassword" name="password" placeholder="Enter your password" required>
+            </div>
+            
+            <button type="submit" class="auth-btn">
+              <i class="fas fa-sign-in-alt"></i> Login
+            </button>
+            
+            <div class="error" id="loginError"></div>
+          </form>
+        </div>
+        
+        <div class="tab-pane" id="register-tab">
+          <form id="registerForm" class="auth-form">
+            <div class="form-group">
+              <label for="regUsername"><i class="fas fa-user"></i> Username</label>
+              <input type="text" id="regUsername" name="username" placeholder="Choose a username" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="regWhatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</label>
+              <input type="text" id="regWhatsapp" name="whatsapp" placeholder="Your WhatsApp number" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="regPassword"><i class="fas fa-lock"></i> Password</label>
+              <input type="password" id="regPassword" name="password" placeholder="Choose a password" required>
+            </div>
+            
+            <button type="submit" class="auth-btn">
+              <i class="fas fa-user-plus"></i> Create Account
+            </button>
+            
+            <div class="error" id="registerError"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <div class="features">
+      <div class="feature">
+        <i class="fas fa-chart-line"></i>
+        <h3>Real-time Signals</h3>
+        <p>Get professional trading signals with high success rate</p>
+      </div>
+      
+      <div class="feature">
+        <i class="fas fa-mobile-alt"></i>
+        <p>Access your signals anytime, anywhere</p>
+      </div>
+      
+      <div class="feature">
+        <i class="fas fa-lock"></i>
+        <p>Secure and private trading experience</p>
+      </div>
+    </div>
+  </div>
+  
+  <script src="/script.js"></script>
+  <script>
+    // Tab switching functionality
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Remove active class from all tabs
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+        
+        // Add active class to clicked tab
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.tab + '-tab').classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
